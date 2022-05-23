@@ -12,6 +12,9 @@ import 'package:flutter_application_1/main.dart';
 
 void main() {
   print('hello');
+  test('Counter value should be incremented', () {
+    print('hello');
+  });
   // testWidgets('Counter increments smoke test', (WidgetTester tester) async {
   //   // Build our app and trigger a frame.
   //   await tester.pumpWidget(MyApp());
