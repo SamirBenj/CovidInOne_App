@@ -8,7 +8,7 @@ import 'package:flutter_application_1/SideMenu/Pages/Sondage/home.dart';
 // import '../../../homepage.dart';
 
 class SurveyHome extends StatefulWidget {
-  SurveyHome({Key key}) : super(key: key);
+  SurveyHome({Key? key}) : super(key: key);
 
   @override
   _SurveyHomeState createState() => _SurveyHomeState();
@@ -44,7 +44,7 @@ class _SurveyHomeState extends State<SurveyHome> {
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('Questions').snapshots(),
-        builder: (context, snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Text('Loading');
           }
@@ -52,10 +52,10 @@ class _SurveyHomeState extends State<SurveyHome> {
             children: [
               Flexible(
                 child: ListView.builder(
-                  itemCount: snapshot.data.docs.length,
+                  itemCount: snapshot.data?.docs.length,
                   itemBuilder: (context, int index) {
-                    bool valeurOui = snapshot.data.docs[index]['valeurBool'];
-                    DocumentSnapshot data = snapshot.data.docs[index];
+                    bool? valeurOui = snapshot.data?.docs[index]['valeurBool'];
+                    DocumentSnapshot? data = snapshot.data?.docs[index];
                     print(data.toString());
                     // var sommeOuiNon = snapshot.data.docs[index]['oui'] +
                     //     snapshot.data.docs[index]['non'];
@@ -63,13 +63,13 @@ class _SurveyHomeState extends State<SurveyHome> {
                     return HomeSur(
                         // documen : docu;
                         salut: valeurOui,
-                        title: snapshot.data.docs[index]['title'].toString(),
+                        title: snapshot.data?.docs[index]['title'].toString(),
                         changeData: (bool value) {
                           setState(() {
-                            editQuestions(value, data.id);
+                            editQuestions(value, data!.id);
                             if (valeurOui != true) {
                               print('selectionner');
-                              print(snapshot.data.docs[index]['title']
+                              print(snapshot.data?.docs[index]['title']
                                   .toString());
                               FirebaseFirestore.instance
                                   .collection("Questions")

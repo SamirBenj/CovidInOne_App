@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HomeSur extends StatefulWidget {
-  final bool salut;
-  final Function changeData;
-  final String title;
-  HomeSur({Key key, this.salut, this.changeData, this.title}) : super(key: key);
+  final bool? salut;
+  final Function? changeData;
+  final String? title;
+  HomeSur({Key? key, this.salut, this.changeData, this.title}) : super(key: key);
 
   @override
   _HomeSurState createState() => _HomeSurState();
@@ -22,7 +22,7 @@ class _HomeSurState extends State<HomeSur> {
             margin: EdgeInsets.all(20),
             child: ListTile(
               title: Text(
-                widget.title,
+                widget.title!,
                 style: TextStyle(
                   color: Colors.blue,
                 ),
@@ -39,7 +39,7 @@ class _HomeSurState extends State<HomeSur> {
                     ),
                     Checkbox(
                       value: widget.salut,
-                      onChanged: widget.changeData,
+                      onChanged: widget.changeData as void Function(bool?)?,
                     ),
                     Text(
                       'Non',

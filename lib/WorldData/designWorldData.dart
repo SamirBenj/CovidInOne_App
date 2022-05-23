@@ -5,13 +5,13 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Design extends StatelessWidget {
-  final String count;
-  final String title;
-  final Color coloricon;
-  final SvgPicture svgpicIcons;
-  final int countYesterday;
+  final String? count;
+  final String? title;
+  final Color? coloricon;
+  final SvgPicture? svgpicIcons;
+  final int? countYesterday;
   const Design({
-    Key key,
+    Key? key,
     this.count,
     this.title,
     this.coloricon,
@@ -86,7 +86,7 @@ class Design extends StatelessWidget {
                                 text: count,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText1
+                                    .bodyText1!
                                     .copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: HexColor('3a3e49'),

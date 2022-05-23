@@ -1,5 +1,5 @@
 class CheckValue {
-  bool valeurBool;
+  bool? valeurBool;
   CheckValue(bool valeurBool) {
     this.valeurBool = valeurBool;
   }

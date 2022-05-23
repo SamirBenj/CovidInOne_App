@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RappelsVaccins extends StatefulWidget {
-  RappelsVaccins({Key key}) : super(key: key);
+  RappelsVaccins({Key? key}) : super(key: key);
 
   @override
   _RappelsVaccinsState createState() => _RappelsVaccinsState();

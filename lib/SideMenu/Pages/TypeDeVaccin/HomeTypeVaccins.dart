@@ -7,7 +7,7 @@ import 'SecondBottomSheet.dart';
 import 'ThirdBottomSheet.dart';
 
 class TypeVaccins extends StatefulWidget {
-  TypeVaccins({Key key}) : super(key: key);
+  TypeVaccins({Key? key}) : super(key: key);
 
   @override
   _TypeVaccinsState createState() => _TypeVaccinsState();

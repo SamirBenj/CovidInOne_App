@@ -11,7 +11,7 @@ class News {
     Response<Map> response = await Dio().get(
         "https://newsapi.org/v2/everything?domains=liberation.fr&q=covid&apiKey=2587dde2cad646e9bd0c9010d42f7df5");
 //https://newsapi.org/v2/everything?q=apple&from=2021-03-11&to=2021-03-11&sortBy=popularity&apiKey=2587dde2cad646e9bd0c9010d42f7df5
-    Map jsonData = response.data;
+    Map jsonData = response.data!;
 
     if (jsonData["status"] == 'ok') {
       jsonData["articles"].forEach((element) {

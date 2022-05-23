@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/SideMenu/Pages/WelcomePage/WelcomePage.dart';
 
 class HomeWelcome extends StatefulWidget {
-  HomeWelcome({Key key}) : super(key: key);
+  HomeWelcome({Key? key}) : super(key: key);
 
   @override
   _HomeWelcomeState createState() => _HomeWelcomeState();

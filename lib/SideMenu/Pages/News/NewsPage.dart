@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'newsJson.dart';
 
 class NewsPageInfo extends StatefulWidget {
-  NewsPageInfo({Key key}) : super(key: key);
+  NewsPageInfo({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<NewsPageInfo> {
-  bool loadingInProgess;
+  late bool loadingInProgess;
   var newslist;
 
   void getNews() async {

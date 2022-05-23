@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key key}) : super(key: key);
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

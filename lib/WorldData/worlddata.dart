@@ -9,7 +9,7 @@ import 'designWorldData.dart';
 class WorldData extends StatefulWidget {
   final covidDataFrance;
   final covidDataAllYesterday;
-  const WorldData({Key key, this.covidDataFrance, this.covidDataAllYesterday})
+  const WorldData({Key? key, this.covidDataFrance, this.covidDataAllYesterday})
       : super(key: key);
 
   @override

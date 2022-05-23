@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 
 class SecondBottomSheet extends StatefulWidget {
-  SecondBottomSheet({Key key}) : super(key: key);
+  SecondBottomSheet({Key? key}) : super(key: key);
 
   @override
   _SecondBottomSheetState createState() => _SecondBottomSheetState();

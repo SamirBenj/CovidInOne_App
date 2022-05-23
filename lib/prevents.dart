@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Prevent extends StatefulWidget {
-  final Map covidDataFranceAll;
-  final String nameField;
-  const Prevent({Key key, this.covidDataFranceAll, this.nameField})
+  final Map? covidDataFranceAll;
+  final String? nameField;
+  const Prevent({Key? key, this.covidDataFranceAll, this.nameField})
       : super(key: key);
 
   @override

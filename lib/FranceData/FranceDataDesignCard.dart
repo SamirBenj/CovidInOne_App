@@ -6,12 +6,12 @@ import 'package:velocity_x/velocity_x.dart';
 const PrimaryColor = const Color(0xFF151026);
 
 class FranceDataDesign extends StatelessWidget {
-  final Map covidDataFranceAll;
-  final String nameField;
-  final String count;
-  final Color colorTextFrance;
+  final Map? covidDataFranceAll;
+  final String? nameField;
+  final String? count;
+  final Color? colorTextFrance;
   const FranceDataDesign(
-      {Key key,
+      {Key? key,
       this.covidDataFranceAll,
       this.nameField,
       this.count,
@@ -41,7 +41,7 @@ class FranceDataDesign extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            nameField,
+            nameField!,
             style: GoogleFonts.anton(
               fontSize: 20,
               letterSpacing: 1.0,

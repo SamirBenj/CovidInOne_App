@@ -7,14 +7,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class FlipCardCountries extends StatefulWidget {
-  FlipCardCountries({Key key}) : super(key: key);
+  FlipCardCountries({Key? key}) : super(key: key);
 
   @override
   _FlipCardCountriesState createState() => _FlipCardCountriesState();
 }
 
 class _FlipCardCountriesState extends State<FlipCardCountries> {
-  List covidAllDataCountries;
+  List? covidAllDataCountries;
   var searchData;
   fetchAllDataCountries() async {
     http.Response response =
@@ -36,7 +36,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
     //     .where((country) => country['country'] == 'Algeria')
     //     .toList());
     setState(() {
-      searchData = covidAllDataCountries
+      searchData = covidAllDataCountries!
           .where((country) =>
               country['country'].toLowerCase().contains(value.toLowerCase()))
           .toList();
@@ -138,7 +138,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                           ),
                           width: double.infinity,
                           child: Text(
-                            covidAllDataCountries[index]['country'].toString(),
+                            covidAllDataCountries![index]['country'].toString(),
                             style: GoogleFonts.anton(
                                 color: Colors.black, fontSize: 20),
                             textAlign: TextAlign.center,
@@ -151,7 +151,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                         Row(
                           children: [
                             Image.network(
-                              covidAllDataCountries[index]['countryInfo']
+                              covidAllDataCountries![index]['countryInfo']
                                   ['flag'],
                               scale: 3.0,
                             ),
@@ -177,7 +177,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                                           locale: 'FR',
                                           symbol: '',
                                           decimalDigits: 0)
-                                      .format(covidAllDataCountries[index]
+                                      .format(covidAllDataCountries![index]
                                           ['cases']),
                                   style: GoogleFonts.anton(
                                     fontSize: 20,
@@ -202,7 +202,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                                       MediaQuery.of(context).size.height * 0.02,
                                 ),
                                 Text(
-                                  covidAllDataCountries[index]['deaths']
+                                  covidAllDataCountries![index]['deaths']
                                       .toString(),
                                   style: GoogleFonts.anton(fontSize: 20),
                                 ),
@@ -268,7 +268,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                                           locale: 'FR',
                                           symbol: '',
                                           decimalDigits: 0)
-                                      .format(covidAllDataCountries[index]
+                                      .format(covidAllDataCountries![index]
                                           ['todayCases']),
                                   style: GoogleFonts.anton(
                                     fontSize: 20,
@@ -290,7 +290,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                                       MediaQuery.of(context).size.height * 0.02,
                                 ),
                                 Text(
-                                  covidAllDataCountries[index]['todayDeaths']
+                                  covidAllDataCountries![index]['todayDeaths']
                                       .toString(),
                                   style: GoogleFonts.anton(fontSize: 20),
                                 ),
@@ -314,7 +314,7 @@ class _FlipCardCountriesState extends State<FlipCardCountries> {
                                           locale: 'FR',
                                           symbol: '',
                                           decimalDigits: 0)
-                                      .format(covidAllDataCountries[index]
+                                      .format(covidAllDataCountries![index]
                                           ['population']),
                                   style: GoogleFonts.anton(fontSize: 20),
                                 ),

@@ -7,14 +7,14 @@ import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class FrontCountriesData extends StatefulWidget {
-  FrontCountriesData({Key key}) : super(key: key);
+  FrontCountriesData({Key? key}) : super(key: key);
 
   @override
   _FrontCountriesDataState createState() => _FrontCountriesDataState();
 }
 
 class _FrontCountriesDataState extends State<FrontCountriesData> {
-  List covidAllDataCountries;
+  List? covidAllDataCountries;
   fetchAllDataCountries() async {
     http.Response response =
         await http.get(Uri.https('disease.sh', '/v3/covid-19/countries'));
@@ -74,7 +74,7 @@ class _FrontCountriesDataState extends State<FrontCountriesData> {
                   ),
                   width: double.infinity,
                   child: Text(
-                    covidAllDataCountries[index]['country'].toString(),
+                    covidAllDataCountries![index]['country'].toString(),
                     style: GoogleFonts.anton(color: Colors.black, fontSize: 20),
                     textAlign: TextAlign.center,
                   ),
@@ -86,7 +86,7 @@ class _FrontCountriesDataState extends State<FrontCountriesData> {
                 Row(
                   children: [
                     Image.network(
-                      covidAllDataCountries[index]['countryInfo']['flag'],
+                      covidAllDataCountries![index]['countryInfo']['flag'],
                       scale: 3.0,
                     ),
                     SizedBox(
@@ -108,7 +108,7 @@ class _FrontCountriesDataState extends State<FrontCountriesData> {
                         Text(
                           NumberFormat.currency(
                                   locale: 'FR', symbol: '', decimalDigits: 0)
-                              .format(covidAllDataCountries[index]['cases']),
+                              .format(covidAllDataCountries![index]['cases']),
                           style: GoogleFonts.anton(
                             fontSize: 20,
                           ),
@@ -131,7 +131,7 @@ class _FrontCountriesDataState extends State<FrontCountriesData> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         Text(
-                          covidAllDataCountries[index]['deaths'].toString(),
+                          covidAllDataCountries![index]['deaths'].toString(),
                           style: GoogleFonts.anton(fontSize: 20),
                         ),
                       ],

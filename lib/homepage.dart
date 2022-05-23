@@ -8,16 +8,16 @@ import 'FranceData/FranceData.dart';
 import 'SideMenu/sideMenu.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Map covidDataAllYesterday;
+  Map? covidDataAllYesterday;
   fetchCovidDataAllYesterday() async {
     http.Response response =
         await get(Uri.https("disease.sh", "v3/covid-19/all"));
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //debugPrint('Passer par la');
   }
 
-  Map covidDataFranceAll;
+  Map? covidDataFranceAll;
   fetchCovidDateFrance() async {
     http.Response response =
         await get(Uri.https("disease.sh", "v3/covid-19/countries/France"));
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //debugPrint('Passer par la');
   }
 
-  Map covidDataFrance;
+  Map? covidDataFrance;
 
   Future fetchCovidDateWorld() async {
     http.Response response =

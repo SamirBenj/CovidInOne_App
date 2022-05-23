@@ -5,11 +5,11 @@ import 'package:velocity_x/velocity_x.dart';
 import 'FranceDataDesignCard.dart';
 
 class FranceData extends StatefulWidget {
-  final Map covidDataFranceAll;
-  final String nameField;
-  final String count;
+  final Map? covidDataFranceAll;
+  final String? nameField;
+  final String? count;
   const FranceData({
-    Key key,
+    Key? key,
     this.covidDataFranceAll,
     this.nameField,
     this.count,
@@ -39,8 +39,8 @@ class _FranceDataState extends State<FranceData> {
               children: [
                 Image.network(
                   widget.covidDataFranceAll != null
-                      ? widget.covidDataFranceAll['countryInfo']['flag']
-                      : CircularProgressIndicator(),
+                      ? widget.covidDataFranceAll!['countryInfo']['flag']
+                      : CircularProgressIndicator() as String,
                   height: context.screenHeight * 0.06,
                 ),
                 Text(
@@ -71,7 +71,7 @@ class _FranceDataState extends State<FranceData> {
                   : FranceDataDesign(
                       count: NumberFormat.currency(
                               locale: 'FR', decimalDigits: 0, symbol: '')
-                          .format(widget.covidDataFranceAll['cases']),
+                          .format(widget.covidDataFranceAll!['cases']),
                       nameField: 'CONFIRME',
                       colorTextFrance: Colors.blue,
                     ),
@@ -81,7 +81,7 @@ class _FranceDataState extends State<FranceData> {
                   : FranceDataDesign(
                       count: NumberFormat.currency(
                               locale: 'FR', decimalDigits: 0, symbol: '')
-                          .format(widget.covidDataFranceAll['deaths']),
+                          .format(widget.covidDataFranceAll!['deaths']),
                       nameField: 'DECES',
                       colorTextFrance: Colors.red,
                     ),

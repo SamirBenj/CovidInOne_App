@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AffichageResultat extends StatefulWidget {
-  AffichageResultat({Key key}) : super(key: key);
+  AffichageResultat({Key? key}) : super(key: key);
 
   @override
   _AffichageResultatState createState() => _AffichageResultatState();
@@ -18,14 +18,14 @@ class _AffichageResultatState extends State<AffichageResultat> {
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection("Questions").snapshots(),
-        builder: (context, snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           return ListView.builder(
-              itemCount: snapshot.data.docs.length,
+              itemCount: snapshot.data?.docs.length,
               itemBuilder: (context, int index) {
-                var sommeOuiNon = snapshot.data.docs[index]['oui'] +
-                    snapshot.data.docs[index]['non'];
-                var oui = snapshot.data.docs[index]['oui'];
-                var non = snapshot.data.docs[index]['non'];
+                var sommeOuiNon = snapshot.data?.docs[index]['oui'] +
+                    snapshot.data?.docs[index]['non'];
+                var oui = snapshot.data?.docs[index]['oui'];
+                var non = snapshot.data?.docs[index]['non'];
                 var pourcentageOui = oui / sommeOuiNon * 100;
                 var pourcentageNon = non / sommeOuiNon * 100;
                 return Container(
@@ -41,7 +41,9 @@ class _AffichageResultatState extends State<AffichageResultat> {
                           child: Column(
                             children: [
                               Text(
-                                snapshot.data.docs[index]['title'].toString(),
+                                snapshot.data?.docs[index]['title']
+                                        .toString() ??
+                                    "error",
                                 textAlign: TextAlign.center,
                                 style:
                                     TextStyle(fontSize: 20, color: Colors.blue),
